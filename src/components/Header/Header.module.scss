@@ -1,16 +1,14 @@
 .header {
-  @apply mx-auto flex w-full max-w-7xl;
+  @apply mx-auto flex w-full max-w-7xl box-border;
 
   &__nav {
-    @apply relative w-full;
+    @apply relative flex w-full flex-row;
   }
-
-
 }
 
 .nav {
   &__container {
-    @apply m-5 block h-5;
+    @apply m-5 block h-5 w-full;
   }
 
   &__wrapper {
@@ -33,5 +31,47 @@
 
   &__notification {
     @apply flex items-center gap-2.5;
+  }
+}
+
+.menu {
+  @apply flex h-[100vh] w-full max-w-[211px] flex-col gap-[50px] bg-dark-greenish-blue py-[19px] transition;
+
+  &__logo {
+    @apply flex justify-between px-5;
+  }
+
+  &__btn {
+    @apply h-4 cursor-pointer items-center justify-center;
+  }
+
+  &__list {
+    @apply flex flex-col text-sm font-bold text-white;
+  }
+
+  &__item {
+    @apply w-full cursor-pointer py-[10px];
+
+    &:hover {
+      @apply bg-gentian-blue;
+    }
+
+    &_current {
+      @apply bg-blue;
+    }
+  }
+}
+
+.item {
+  &__container {
+    @apply flex items-center gap-4 px-5;
+  }
+
+  &__icon {
+    @apply flex h-[25px] w-[25px] items-center justify-center;
+  }
+
+  &__text {
+    @apply uppercase;
   }
 }

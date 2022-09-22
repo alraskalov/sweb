@@ -9,6 +9,9 @@ module.exports = {
       colors: {
         crayola: "#F7FAFB",
         "grey-squirrel": "#7A8185",
+        "dark-greenish-blue": "#062436",
+        blue: "#3DBDF6",
+        "gentian-blue": "#0A3145"
       },
       fontSize: {
         xs: ["12px", "15px"],

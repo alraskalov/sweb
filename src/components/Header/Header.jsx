@@ -1,26 +1,74 @@
-import React from "react";
+import { useState } from "react";
+import logo from "../../assets/logo.svg";
+import { menuItem } from "../../utils/data";
 import styles from "./Header.module.scss";
 
 const Header = () => {
+  const [menuIsActive, setMenuIsActive] = useState(false);
+
+  const onClick = () => {
+    return menuIsActive ? setMenuIsActive(false) : setMenuIsActive(true);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={`${styles.header__nav} nav`}>
+        {menuIsActive && (
+          <div className={styles.menu}>
+            <div className={styles.menu__logo}>
+              <div>
+                <img src={logo} alt="Логотип SpaceWeb" />
+              </div>
+              <div className={styles.menu__btn}>
+                <button type="button" className="h-4" onClick={onClick}>
+                  <svg
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="20" height="2" rx="1" fill="#fff" />
+                    <rect y="7" width="20" height="2" rx="1" fill="#fff" />
+                    <rect y="14" width="20" height="2" rx="1" fill="#fff" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <ul className={styles.menu__list}>
+              {menuItem.map((el) => (
+                <li className={`${styles.menu__item} item`}>
+                  <div className={styles.item__container}>
+                    <div className={styles.item__icon}>
+                      <img src={el.img} alt={el.text} />
+                    </div>
+                    <div>
+                      <p className={styles.item__text}>{el.text}</p>
+                    </div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className={styles.nav__container}>
           <div className={styles.nav__wrapper}>
             <div className={styles["nav__menu-btn"]}>
-              <button type="button" className="h-4">
-                <svg
-                  width="20"
-                  height="16"
-                  viewBox="0 0 20 16"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect width="20" height="2" rx="1" fill="#062436" />
-                  <rect y="7" width="20" height="2" rx="1" fill="#062436" />
-                  <rect y="14" width="20" height="2" rx="1" fill="#062436" />
-                </svg>
-              </button>
+              {!menuIsActive && (
+                <button type="button" className="h-4" onClick={onClick}>
+                  <svg
+                    width="20"
+                    height="16"
+                    viewBox="0 0 20 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="20" height="2" rx="1" fill="#062436" />
+                    <rect y="7" width="20" height="2" rx="1" fill="#062436" />
+                    <rect y="14" width="20" height="2" rx="1" fill="#062436" />
+                  </svg>
+                </button>
+              )}
             </div>
             <div className={`${styles.nav__info} info`}>
               <div className={styles.info__balance}>
