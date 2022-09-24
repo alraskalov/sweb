@@ -69,7 +69,7 @@ const Select = ({ selected, setSelected }) => {
         onMouseDown={handleClickSelectBtn}
         role="button"
         tabIndex={0}
-        className={`${styles.select__btn} ${activeSelect} ${isSelected} ${styles.select__btn_error}`}
+        className={`${styles.select__btn} ${activeSelect} ${isSelected}`}
       >
         <p className={styles.select__text}>{selected || arr[0]}</p>
         <div className={styles.select__arrow}>{arrow}</div>
