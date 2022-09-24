@@ -1,4 +1,9 @@
+import { useState } from "react";
+import Select from "../UI/Select/Select";
+
 const Vps = () => {
+  const [selectedCategory, setSelectedCategory] = useState("");
+
   return (
     <section>
       <div className="flex flex-col border-b-2 border-solid border-crayola text-dark-greenish-blue">
@@ -11,8 +16,13 @@ const Vps = () => {
           </div>
         </div>
       </div>
-      <div className="mt-4 mb-5 box-border flex max-w-[232px] flex-col">
-        123
+      <div className="mt-4 mb-5 box-border flex max-w-[232px] flex-col gap-3">
+        <div>
+          <div>
+            <p>Категория</p>
+          </div>
+        </div>
+        <Select selected={selectedCategory} setSelected={setSelectedCategory} />
       </div>
     </section>
   );
