@@ -29,6 +29,9 @@ module.exports = {
       boxShadow: {
         lg: "0px 2px 10px #AFBABF",
         md: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        "button-def": "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)",
+        "button-hov": "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.16)",
+        "button-foc": "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.26)",
       },
     },
   },
