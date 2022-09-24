@@ -11,42 +11,52 @@ import ssl from "../assets/ssl.svg";
 
 export const menuItem = [
   {
+    id: "vps",
     img: vps,
     text: "Заказать VPS",
   },
   {
+    id: "account",
     img: account,
     text: "Аккаунт",
   },
   {
+    id: "server",
     img: server,
     text: "Серверы",
   },
   {
+    id: "interfaceContent",
     img: interfaceContent,
     text: "МОНИТОРИНГ",
   },
   {
+    id: "domains",
     img: domains,
     text: "Домены",
   },
   {
+    id: "ssl",
     img: ssl,
     text: "SSL",
   },
   {
+    id: "shop",
     img: shop,
     text: "МАГАЗИН",
   },
   {
+    id: "seo",
     img: seo,
     text: "SEO и реклама",
   },
   {
+    id: "help",
     img: help,
     text: "Поддержка",
   },
   {
+    id: "idea",
     img: idea,
     text: "ЕСТЬ ИДЕЯ",
   },

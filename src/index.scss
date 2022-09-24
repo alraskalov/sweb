@@ -51,5 +51,9 @@
 }
 
 body {
-  @apply font-proxima font-normal bg-crayola;
+  @apply bg-crayola;
+}
+
+#root {
+  @apply font-proxima font-normal min-h-[100vh] h-[100%] max-w-7xl mx-auto;
 }

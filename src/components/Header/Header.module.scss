@@ -1,5 +1,5 @@
 .header {
-  @apply mx-auto flex w-full max-w-7xl box-border;
+  @apply mx-auto flex w-full max-w-7xl box-border relative;
 
   &__nav {
     @apply relative flex w-full flex-row;
@@ -35,7 +35,7 @@
 }
 
 .menu {
-  @apply flex h-[100vh] w-full max-w-[211px] flex-col gap-[50px] bg-dark-greenish-blue py-[19px] transition;
+  @apply flex h-[100%] w-full max-w-[211px] flex-col gap-[50px] bg-dark-greenish-blue py-[19px] transition;
 
   &__logo {
     @apply flex justify-between px-5;
@@ -52,7 +52,7 @@
   &__item {
     @apply w-full cursor-pointer py-[10px];
 
-    &:hover {
+    &:not(&_current):hover {
       @apply bg-gentian-blue;
     }
 
@@ -73,5 +73,14 @@
 
   &__text {
     @apply uppercase;
+  }
+}
+
+.container {
+  background-color: rgb(6, 36, 54, .5);
+  @apply w-0 opacity-0 invisible min-h-[100vh] h-full fixed z-50 top-0 left-0 transition-all delay-75;
+
+  &_active {
+    @apply w-[100%] opacity-100 visible overflow-y-hidden;
   }
 }

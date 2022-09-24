@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../../assets/logo.svg";
 import { menuItem } from "../../utils/data";
 import styles from "./Header.module.scss";
@@ -10,10 +10,30 @@ const Header = () => {
     return menuIsActive ? setMenuIsActive(false) : setMenuIsActive(true);
   };
 
+  useEffect(() => {
+    if (!menuIsActive) return undefined;
+    const closeByEscape = (e) => {
+      if (e.key === "Escape") {
+        setMenuIsActive(!menuIsActive);
+      }
+    };
+
+    document.addEventListener("keydown", closeByEscape);
+    return () => document.removeEventListener("keydown", closeByEscape);
+  }, [menuIsActive]);
+
+  useEffect(() => {
+    document.body.style.overflowY = menuIsActive ? "hidden" : "";
+  }, [menuIsActive]);
+
   return (
     <header className={styles.header}>
       <nav className={`${styles.header__nav} nav`}>
-        {menuIsActive && (
+        <div
+          className={`${styles.container} ${
+            menuIsActive ? styles.container_active : ""
+          }`}
+        >
           <div className={styles.menu}>
             <div className={styles.menu__logo}>
               <div>
@@ -37,7 +57,12 @@ const Header = () => {
             </div>
             <ul className={styles.menu__list}>
               {menuItem.map((el) => (
-                <li className={`${styles.menu__item} item`}>
+                <li
+                  key={el.id}
+                  className={`${styles.menu__item} ${
+                    el.id === "vps" ? styles.menu__item_current : ""
+                  } item`}
+                >
                   <div className={styles.item__container}>
                     <div className={styles.item__icon}>
                       <img src={el.img} alt={el.text} />
@@ -50,7 +75,7 @@ const Header = () => {
               ))}
             </ul>
           </div>
-        )}
+        </div>
         <div className={styles.nav__container}>
           <div className={styles.nav__wrapper}>
             <div className={styles["nav__menu-btn"]}>
