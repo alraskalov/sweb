@@ -1,3 +1,4 @@
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Vps from "../Vps/Vps";
 import styles from "./Home.module.scss";
@@ -9,6 +10,7 @@ const Home = () => {
       <main className={styles.content}>
         <Vps />
       </main>
+      <Footer />
     </>
   );
 };

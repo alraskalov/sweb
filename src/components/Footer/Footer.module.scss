@@ -1,0 +1,21 @@
+.footer {
+  @apply max-w-7xl mx-auto font-normal text-xs text-black;
+
+  &__container {
+    @apply flex box-border p-5 w-full justify-between;
+  }
+
+  &__link {
+    @apply text-blue;
+  }
+
+  &__market {
+    @apply gap-[5px] flex flex-col;
+  }
+}
+
+.market {
+  &__links {
+    @apply flex gap-[10px];
+  }
+}
