@@ -75,7 +75,7 @@ const Select = ({ selected, setSelected }) => {
         <div className={styles.select__arrow}>{arrow}</div>
       </div>
       {isActive && (
-        <div className={`${styles.select__list} list`}>
+        <div className={`${styles.select__list} ${styles.list}`}>
           {arr.map((el) => (
             <div
               key={el}

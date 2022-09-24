@@ -2,7 +2,7 @@
   @apply w-full font-normal text-base box-border relative;
 
   &__btn {
-    @apply border-2 border-solid border-[#AFBABF] rounded h-9 flex items-center px-4 justify-between italic text-[#AFBABF] transition delay-75;
+    @apply border-2 border-solid border-[#AFBABF] rounded h-9 flex items-center px-4 justify-between italic text-[#AFBABF] transition delay-75 bg-white;
 
     &:not(&_active):not(&_selected):hover {
       @apply text-silver-grey border-silver-grey;
@@ -75,6 +75,8 @@
 }
 
 .list {
+  @apply z-20;
+
   &__item {
     @apply py-[6px] cursor-pointer w-full pl-4 pr-3 transition delay-[15ms];
 

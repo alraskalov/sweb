@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         proxima: "'Proxima Nova', serif",
       },
+      gridTemplateColumns: {
+        list: "repeat(4, 1fr);"
+      },
       colors: {
         crayola: "#F7FAFB",
         "grey-squirrel": "#7A8185",

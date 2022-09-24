@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Select from "../UI/Select/Select";
+import VpsList from "../VpsList/VpsList";
 
 const Vps = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -24,6 +25,7 @@ const Vps = () => {
         </div>
         <Select selected={selectedCategory} setSelected={setSelectedCategory} />
       </div>
+      <VpsList />
     </section>
   );
 };
