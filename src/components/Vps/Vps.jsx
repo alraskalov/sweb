@@ -1,9 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVpsRequest } from "../../redux/actions/vpsActions";
 import Select from "../UI/Select/Select";
 import VpsList from "../VpsList/VpsList";
 
 const Vps = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
+  const dispatch = useDispatch();
+
+  const vpsPlans = useSelector((state) => state?.vps?.vpsPlans);
+  console.log(vpsPlans);
+
+  useEffect(() => {
+    dispatch(fetchVpsRequest());
+  }, [dispatch]);
 
   return (
     <section>
