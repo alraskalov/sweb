@@ -54,5 +54,5 @@ body {
 }
 
 #root {
-  @apply h-[100%] min-h-[100vh] max-w-7xl font-proxima font-normal sm:mx-0 md:mx-5 xl:mx-auto;
+  @apply h-full min-h-screen max-w-7xl font-proxima font-normal;
 }
