@@ -17,6 +17,8 @@ const Header = ({ menuIsActive, onClickMenu }) => {
 
   const handleClickMenu = () => onClickMenu(!menuIsActive);
 
+  const handleLogout = () => alert("Вы вышли из аккаунта :)");
+
   return (
     <header className={styles.header}>
       <div className={`${styles.header__nav} nav`}>
@@ -69,7 +71,9 @@ const Header = ({ menuIsActive, onClickMenu }) => {
                 </div>
               </div>
               <div>
-                <button type="button">Выйти</button>
+                <button type="button" onClick={handleLogout}>
+                  Выйти
+                </button>
               </div>
             </div>
           </div>
