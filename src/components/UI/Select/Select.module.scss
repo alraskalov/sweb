@@ -1,11 +1,13 @@
 .select {
-  @apply w-full font-normal text-base box-border relative select-none;
+  @apply relative box-border w-full select-none text-base font-normal;
 
   &__btn {
-    @apply border-2 border-solid border-[#AFBABF] rounded h-9 flex items-center px-4 justify-between italic text-[#AFBABF] transition delay-75 bg-white;
+    @apply flex h-9 items-center justify-between rounded border-2 border-solid bg-white px-4 italic transition delay-75;
+    color: #AFBABF;
+    border-color: #AFBABF;
 
     &:not(&_active):not(&_selected):hover {
-      @apply text-silver-grey border-silver-grey;
+      @apply border-silver-grey text-silver-grey;
 
       .select__arrow svg rect {
         @apply fill-silver-grey;
@@ -29,7 +31,7 @@
     }
 
     &_selected:not(&_active) {
-      @apply text-black border-silver-grey not-italic;
+      @apply border-silver-grey not-italic text-black;
 
       .select__arrow svg rect {
         @apply fill-silver-grey;
@@ -45,7 +47,7 @@
     }
 
     &_disabled {
-      @apply text-grey-squirrel bg-crayola border-silver-grey;
+      @apply border-silver-grey bg-crayola text-grey-squirrel;
 
       .select__arrow svg rect {
         @apply fill-silver-grey;
@@ -53,24 +55,29 @@
     }
 
     &_disabled:not(&_selected) {
-      @apply border-grideperlevy bg-[#F9FBFC] text-[#AFBABF];
+      @apply  border-grideperlevy;
+      background-color: #F9FBFC;
+      color: #AFBABF;
 
       .select__arrow svg rect {
-        @apply fill-[#AFBABF];
+        fill: #AFBABF;
       }
     }
   }
 
   &__arrow {
-    @apply w-[14px] h-2;
+    @apply h-2;
+    width: 14px
   }
 
   &__list {
-    @apply absolute rounded flex items-start pt-4 pb-3 flex-col w-full shadow-lg bg-white top-[46px];
+    @apply absolute flex w-full flex-col items-start rounded bg-white pt-4 pb-3 shadow-lg;
+    top: 46px;
   }
 
   &__text {
-    @apply overflow-ellipsis whitespace-nowrap overflow-hidden w-[166px];
+    @apply overflow-hidden overflow-ellipsis whitespace-nowrap;
+    width: 166px;
   }
 }
 
@@ -78,7 +85,10 @@
   @apply z-20;
 
   &__item {
-    @apply py-[6px] cursor-pointer w-full pl-4 pr-3 transition delay-[15ms];
+    @apply w-full cursor-pointer pl-4 pr-3 transition;
+    transition-delay: 15ms;
+    padding-top: 6px;
+    padding-bottom: 6px;
 
     &_selected {
       @apply bg-grideperlevy;

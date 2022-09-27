@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchVpsRequest } from "../../redux/actions/vpsActions";
 import styles from "./Vps.module.scss";
-import Select from "../UI/Select/Select";
-import VpsCard from "../VpsCard/VpsCard";
-import VpsList from "../VpsList/VpsList";
+import Select from "../../components/UI/Select/Select";
+import VpsCard from "../../components/VpsCard/VpsCard";
+import VpsList from "../../components/VpsList/VpsList";
 
 const Vps = () => {
   const [selectedCategory, setSelectedCategory] = useState([]);

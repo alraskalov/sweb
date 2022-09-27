@@ -1,6 +1,6 @@
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import Vps from "../Vps/Vps";
+import Vps from "../../pages/Vps/Vps";
 import styles from "./Home.module.scss";
 
 const Home = () => {

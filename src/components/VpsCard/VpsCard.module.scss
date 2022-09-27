@@ -1,20 +1,23 @@
 .card {
-  @apply bg-[#E0F6FC] w-full box-border rounded justify-start h-[100%];
+  @apply box-border w-full justify-start rounded;
+  height: 100%;
+  background-color: #E0F6FC;
 
   &_hdd {
-    @apply bg-[#C4EBF8];
+    background-color: #C4EBF8;
   }
 
   &_turbo {
-    @apply bg-[#ECFDF7];
+    background-color: #ECFDF7;
   }
 
   &__container {
-    @apply flex flex-col px-5 pt-5 pb-6 w-full h-[100%];
+    @apply flex w-full flex-col px-5 pt-5 pb-6;
+    height: 100%;
   }
 
   &__header {
-    @apply flex items-center gap-4 w-full;
+    @apply flex w-full items-center gap-4;
   }
 
   &__title {
@@ -22,50 +25,58 @@
   }
 
   &__price {
-    @apply mt-[14px] mb-[18px] text-xl font-bold text-black w-full;
+    @apply w-full text-xl font-bold text-black;
+    margin-top: 14px;
+    margin-bottom: 18px;
   }
 
   &__specifications {
-    @apply flex flex-col gap-4 w-full;
+    @apply flex w-full flex-col gap-4;
   }
 
   &__form {
-    @apply flex flex-col gap-[23px] mt-5 w-full h-[100%];
+    @apply mt-5 flex w-full flex-col;
+    gap: 23px;
+    height: 100%;
   }
 
   &__bonus {
-    @apply flex items-center gap-4 my-auto;
+    @apply my-auto flex items-center gap-4;
   }
 
   &__button {
-    @apply max-w-[167px] self-center w-full;
+    @apply w-full self-center;
+    max-width: 167px;
   }
 }
 
 .form {
   &__element {
-    @apply flex flex-col gap-2 w-full;
+    @apply flex w-full flex-col gap-2;
   }
 }
 
-
 .specifications {
   &__item {
-    @apply text-[#62686C] text-xs font-normal gap-[9px] flex items-center;
+    @apply flex items-center text-xs font-normal;
+    color: #62686C;
+    gap: 9px;
   }
 
   &__text {
-    @apply max-w-[26px] w-full;
+    @apply w-full;
+    max-width: 26px
   }
 
   &__span {
-    @apply text-black text-base;
+    @apply text-base text-black;
   }
 }
 
 .element {
   &__text {
-    @apply text-xs text-[#62686C] font-normal w-full;
+    @apply w-full text-xs font-normal;
+    color: #62686C;
   }
 }
 

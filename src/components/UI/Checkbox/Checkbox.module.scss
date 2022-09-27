@@ -1,24 +1,25 @@
 .label {
-  @apply flex border relative rounded-[10px] border-blue border-solid w-full box-border h-5 bg-white cursor-pointer max-w-[192px];
+  @apply rounded-[10px] max-w-[192px] relative box-border flex h-5 w-full cursor-pointer border border-solid border-blue bg-white;
 
   &_disabled {
-    @apply opacity-60 cursor-default;
+    @apply cursor-default opacity-60;
   }
 
   &__checkbox {
     @apply hidden;
 
-    &:checked~.label__div::before {
-      @apply left-[120px] w-[70px];
+    &:checked ~ .label__div::before {
+      left: 120px;
+      width: 70px;
     }
 
-    &:not(:checked)~.label__container {
+    &:not(:checked) ~ .label__container {
       .label__text:nth-child(odd) {
         @apply font-normal text-white;
       }
     }
 
-    &:checked~.label__container {
+    &:checked ~ .label__container {
       .label__text:nth-child(even) {
         @apply font-normal text-white;
       }
@@ -26,15 +27,14 @@
   }
 
   &__container {
-    @apply px-[14px] flex justify-between items-center w-full;
+    @apply px-[14px] flex w-full items-center justify-between;
   }
 
   &__text {
-    @apply text-xs font-semibold text-blue z-10 select-none;
+    @apply z-10 select-none text-xs font-semibold text-blue;
   }
 
   &__div::before {
-    @apply content-[''] absolute w-[123px] h-[18px] bg-blue rounded-[10px] border border-blue left-0 transition-all delay-75;
+    @apply content-[''] h-[18px] w-[123px] rounded-[10px] absolute left-0 border border-blue bg-blue transition-all delay-75;
   }
-
 }
