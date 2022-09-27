@@ -75,24 +75,26 @@ const Select = ({ data, selected, setSelected }) => {
         <p className={styles.select__text}>{selected[0]?.description}</p>
         <div className={styles.select__arrow}>{arrow}</div>
       </div>
-      {isActive && (
-        <div className={`${styles.select__list} ${styles.list}`}>
-          {data.map((el) => (
-            <div
-              key={el.id}
-              onMouseDown={() => updateSelected([el])}
-              role="option"
-              aria-selected
-              tabIndex={0}
-              className={`${styles.list__item} ${
-                selected[0]?.id === el.id ? styles.list__item_selected : ""
-              }`}
-            >
-              {el.description}
-            </div>
-          ))}
-        </div>
-      )}
+      <div
+        className={`${styles.select__list} ${
+          isActive ? styles.select__list_active : ""
+        } ${styles.list}`}
+      >
+        {data.map((el) => (
+          <div
+            key={el.id}
+            onMouseDown={() => updateSelected([el])}
+            role="option"
+            aria-selected
+            tabIndex={0}
+            className={`${styles.list__item} ${
+              selected[0]?.id === el.id ? styles.list__item_selected : ""
+            }`}
+          >
+            {el.description}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

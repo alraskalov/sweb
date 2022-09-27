@@ -71,8 +71,12 @@
   }
 
   &__list {
-    @apply absolute flex w-full flex-col items-start rounded bg-white pt-4 pb-3 shadow-lg;
+    @apply absolute invisible opacity-0 w-0 flex flex-col items-start rounded bg-white pt-4 pb-3 shadow-lg transition-all delay-100;
     top: 46px;
+
+    &_active {
+      @apply w-full visible opacity-100;
+    }
   }
 
   &__text {
