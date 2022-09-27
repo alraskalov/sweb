@@ -7,7 +7,6 @@
 - `React`
 - `Redux`
 - `Redux-Saga`
-- `React-Slick`
 - `ESLint`
 - `SASS (SCSS)`
 
