@@ -1,0 +1,91 @@
+.select {
+  @apply w-full font-normal text-base box-border relative select-none;
+
+  &__btn {
+    @apply border-2 border-solid border-[#AFBABF] rounded h-9 flex items-center px-4 justify-between italic text-[#AFBABF] transition delay-75 bg-white;
+
+    &:not(&_active):not(&_selected):hover {
+      @apply text-silver-grey border-silver-grey;
+
+      .select__arrow svg rect {
+        @apply fill-silver-grey;
+      }
+    }
+
+    &:focus {
+      @apply border-2 border-solid border-blue outline-none;
+    }
+
+    &_active {
+      @apply border-dark-blue not-italic text-black;
+
+      .select__arrow {
+        @apply rotate-180;
+      }
+
+      .select__arrow svg rect {
+        @apply fill-dark-blue;
+      }
+    }
+
+    &_selected:not(&_active) {
+      @apply text-black border-silver-grey not-italic;
+
+      .select__arrow svg rect {
+        @apply fill-silver-grey;
+      }
+    }
+
+    &_error {
+      @apply border-bright-red;
+
+      .select__arrow svg rect {
+        @apply fill-bright-red;
+      }
+    }
+
+    &_disabled {
+      @apply text-grey-squirrel bg-crayola border-silver-grey;
+
+      .select__arrow svg rect {
+        @apply fill-silver-grey;
+      }
+    }
+
+    &_disabled:not(&_selected) {
+      @apply border-grideperlevy bg-[#F9FBFC] text-[#AFBABF];
+
+      .select__arrow svg rect {
+        @apply fill-[#AFBABF];
+      }
+    }
+  }
+
+  &__arrow {
+    @apply w-[14px] h-2;
+  }
+
+  &__list {
+    @apply absolute rounded flex items-start pt-4 pb-3 flex-col w-full shadow-lg bg-white top-[46px];
+  }
+
+  &__text {
+    @apply overflow-ellipsis whitespace-nowrap overflow-hidden w-[166px];
+  }
+}
+
+.list {
+  @apply z-20;
+
+  &__item {
+    @apply py-[6px] cursor-pointer w-full pl-4 pr-3 transition delay-[15ms];
+
+    &_selected {
+      @apply bg-grideperlevy;
+    }
+
+    &:hover {
+      @apply bg-blue text-white;
+    }
+  }
+}

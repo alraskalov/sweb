@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Bold */
+  @font-face {
+    font-family: "Proxima Nova";
+    font-weight: 700;
+    font-style: normal;
+    src: url("./fonts/ProximaNova-Bold.woff2") format("woff2"),
+      url("./fonts/ProximaNova-Bold.woff") format("woff");
+  }
+
+  /* Regular */
+  @font-face {
+    font-family: "Proxima Nova";
+    font-weight: 400;
+    font-style: normal;
+    src: url("./fonts/ProximaNova-Regular.woff2") format("woff2"),
+      url("./fonts/ProximaNova-Regular.woff") format("woff");
+  }
+
+  /* Extrabold */
+  @font-face {
+    font-family: "Proxima Nova";
+    font-weight: 800;
+    font-style: normal;
+    src: url("./fonts/ProximaNova-Extrabld.woff2") format("woff2"),
+      url("./fonts/ProximaNova-Extrabld.woff") format("woff");
+  }
+
+  /* Semibold */
+  @font-face {
+    font-family: "Proxima Nova";
+    font-weight: 600;
+    font-style: normal;
+    src: url("./fonts/ProximaNova-Semibold.woff2") format("woff2"),
+      url("./fonts/ProximaNova-Semibold.woff") format("woff");
+  }
+
+  /* Light */
+  @font-face {
+    font-family: "Proxima Nova";
+    font-weight: 300;
+    font-style: normal;
+    src: url("./fonts/ProximaNova-Light.woff2") format("woff2"),
+      url("./fonts/ProximaNova-Light.woff") format("woff");
+  }
+}
+
+body {
+  @apply bg-crayola;
+}
+
+#root {
+  @apply font-proxima font-normal min-h-[100vh] h-[100%] max-w-7xl xl:mx-auto md:mx-5 sm:mx-0;
+}

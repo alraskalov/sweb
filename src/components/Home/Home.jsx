@@ -1,5 +1,18 @@
-import React from "react";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+import Vps from "../Vps/Vps";
+import styles from "./Home.module.scss";
 
-const Home = () => <div>App</div>;
+const Home = () => {
+  return (
+    <>
+      <Header />
+      <main className={styles.content}>
+        <Vps />
+      </main>
+      <Footer />
+    </>
+  );
+};
 
 export default Home;

@@ -1,0 +1,76 @@
+.card {
+  @apply bg-[#E0F6FC] w-full box-border rounded justify-start h-[100%];
+
+  &_hdd {
+    @apply bg-[#C4EBF8];
+  }
+
+  &_turbo {
+    @apply bg-[#ECFDF7];
+  }
+
+  &__container {
+    @apply flex flex-col px-5 pt-5 pb-6 w-full h-[100%];
+  }
+
+  &__header {
+    @apply flex items-center gap-4 w-full;
+  }
+
+  &__title {
+    @apply text-xs font-normal text-black;
+  }
+
+  &__price {
+    @apply mt-[14px] mb-[18px] text-xl font-bold text-black w-full;
+  }
+
+  &__specifications {
+    @apply flex flex-col gap-4 w-full;
+  }
+
+  &__form {
+    @apply flex flex-col gap-[23px] mt-5 w-full h-[100%];
+  }
+
+  &__bonus {
+    @apply flex items-center gap-4 my-auto;
+  }
+
+  &__button {
+    @apply max-w-[167px] self-center w-full;
+  }
+}
+
+.form {
+  &__element {
+    @apply flex flex-col gap-2 w-full;
+  }
+}
+
+
+.specifications {
+  &__item {
+    @apply text-[#62686C] text-xs font-normal gap-[9px] flex items-center;
+  }
+
+  &__text {
+    @apply max-w-[26px] w-full;
+  }
+
+  &__span {
+    @apply text-black text-base;
+  }
+}
+
+.element {
+  &__text {
+    @apply text-xs text-[#62686C] font-normal w-full;
+  }
+}
+
+.bonus {
+  &__text {
+    @apply text-xs font-normal;
+  }
+}

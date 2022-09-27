@@ -1,0 +1,40 @@
+.label {
+  @apply flex border relative rounded-[10px] border-blue border-solid w-full box-border h-5 bg-white cursor-pointer max-w-[192px];
+
+  &_disabled {
+    @apply opacity-60 cursor-default;
+  }
+
+  &__checkbox {
+    @apply hidden;
+
+    &:checked~.label__div::before {
+      @apply left-[120px] w-[70px];
+    }
+
+    &:not(:checked)~.label__container {
+      .label__text:nth-child(odd) {
+        @apply font-normal text-white;
+      }
+    }
+
+    &:checked~.label__container {
+      .label__text:nth-child(even) {
+        @apply font-normal text-white;
+      }
+    }
+  }
+
+  &__container {
+    @apply px-[14px] flex justify-between items-center w-full;
+  }
+
+  &__text {
+    @apply text-xs font-semibold text-blue z-10 select-none;
+  }
+
+  &__div::before {
+    @apply content-[''] absolute w-[123px] h-[18px] bg-blue rounded-[10px] border border-blue left-0 transition-all delay-75;
+  }
+
+}

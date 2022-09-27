@@ -1,0 +1,19 @@
+.button {
+  @apply uppercase font-extrabold text-base text-white tracking-[0.6px] rounded-sm bg-blue shadow-button-def h-9 w-full transition flex items-center justify-center;
+
+  &:hover {
+    @apply bg-[#37ACE0] shadow-button-hov;
+  }
+
+  &:focus {
+    @apply bg-[#37ACE0] shadow-button-foc outline-none;
+  }
+
+  &:active {
+    @apply bg-[#0086C2] shadow-button-foc;
+  }
+
+  &:disabled {
+    @apply bg-[#C8D1D5] shadow-none;
+  }
+}

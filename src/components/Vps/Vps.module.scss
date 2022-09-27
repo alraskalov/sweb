@@ -1,0 +1,29 @@
+.vps {
+  @apply flex h-[100%] min-h-[100vh] w-full flex-col;
+
+  &__header {
+    @apply flex flex-col border-b-2 border-solid border-crayola text-dark-greenish-blue;
+  }
+
+  &__category {
+    @apply mt-4 mb-5 box-border flex lg:max-w-[232px] flex-col gap-3 max-w-none;
+  }
+}
+
+.header {
+  &__container {
+    @apply mb-[15px] flex flex-col gap-[11px];
+  }
+
+  &__title {
+    @apply text-sm font-light uppercase;
+  }
+
+  &__subtitle {
+    @apply text-xl font-bold uppercase;
+  }
+}
+
+.error {
+  @apply m-auto flex h-[100%] w-[100%] justify-center;
+}
