@@ -1,5 +1,5 @@
 .select {
-  @apply w-full font-normal text-base box-border relative;
+  @apply w-full font-normal text-base box-border relative select-none;
 
   &__btn {
     @apply border-2 border-solid border-[#AFBABF] rounded h-9 flex items-center px-4 justify-between italic text-[#AFBABF] transition delay-75 bg-white;

@@ -14,6 +14,14 @@ function* workerFetchVps() {
       datacenters,
       categories,
     } = vps.result;
+    const modifCategories = categories.map((el) => {
+      return {
+        id: el.id,
+        name: el.slug,
+        description: el.name,
+        prior: el.prior,
+      };
+    });
     yield put(
       fetchVpsSuccess({
         vpsPlans,
@@ -21,11 +29,10 @@ function* workerFetchVps() {
         selectPanel,
         osPanel,
         datacenters,
-        categories,
+        modifCategories,
       })
     );
   } catch (e) {
-    console.log(e);
     yield put(
       fetchVpsFailure({
         eroror: e.message,

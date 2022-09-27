@@ -2,8 +2,6 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styles from "./Select.module.scss";
 
-const arr = ["Все", "NVMe (KVM)", "Большого объема (HDD)", "HighCPU (TURBO)"];
-
 const arrow = (
   <svg
     width="14"
@@ -33,14 +31,12 @@ const arrow = (
   </svg>
 );
 
-const Select = ({ selected, setSelected }) => {
+const Select = ({ data, selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);
   const activeSelect = isActive ? styles.select__btn_active : "";
   const isSelected = selected ? styles.select__btn_selected : "";
 
-  const handleClickSelectBtn = () => {
-    setIsActive(!isActive);
-  };
+  const toggling = () => setIsActive(!isActive);
 
   const updateSelected = (option) => {
     setSelected(option);
@@ -60,34 +56,39 @@ const Select = ({ selected, setSelected }) => {
   }, [isActive]);
 
   useEffect(() => {
-    setSelected(arr[0]);
-  }, [setSelected]);
+    for (let i = 0; i < data.length; i += 1) {
+      if (data[i].id === selected[0]?.id) {
+        return setSelected([data[i]]);
+      }
+    }
+    return setSelected([data[0]]);
+  }, [data, setSelected]);
 
   return (
     <div className={styles.select}>
       <div
-        onMouseDown={handleClickSelectBtn}
+        onMouseDown={toggling}
         role="button"
         tabIndex={0}
         className={`${styles.select__btn} ${activeSelect} ${isSelected}`}
       >
-        <p className={styles.select__text}>{selected || arr[0]}</p>
+        <p className={styles.select__text}>{selected[0]?.description}</p>
         <div className={styles.select__arrow}>{arrow}</div>
       </div>
       {isActive && (
         <div className={`${styles.select__list} ${styles.list}`}>
-          {arr.map((el) => (
+          {data.map((el) => (
             <div
-              key={el}
-              onMouseDown={() => updateSelected(el)}
+              key={el.id}
+              onMouseDown={() => updateSelected([el])}
               role="option"
               aria-selected
               tabIndex={0}
               className={`${styles.list__item} ${
-                selected === el ? styles.list__item_selected : ""
+                selected[0]?.id === el.id ? styles.list__item_selected : ""
               }`}
             >
-              {el}
+              {el.description}
             </div>
           ))}
         </div>
@@ -97,7 +98,8 @@ const Select = ({ selected, setSelected }) => {
 };
 
 Select.propTypes = {
-  selected: PropTypes.string.isRequired,
+  data: PropTypes.instanceOf(Array).isRequired,
+  selected: PropTypes.instanceOf(Object).isRequired,
   setSelected: PropTypes.func.isRequired,
 };
 

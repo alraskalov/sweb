@@ -1,11 +1,27 @@
 .label {
   @apply flex border relative rounded-[10px] border-blue border-solid w-full box-border h-5 bg-white cursor-pointer max-w-[192px];
 
+  &_disabled {
+    @apply opacity-60 cursor-default;
+  }
+
   &__checkbox {
     @apply hidden;
 
     &:checked~.label__div::before {
       @apply left-[120px] w-[70px];
+    }
+
+    &:not(:checked)~.label__container {
+      .label__text:nth-child(odd) {
+        @apply font-normal text-white;
+      }
+    }
+
+    &:checked~.label__container {
+      .label__text:nth-child(even) {
+        @apply font-normal text-white;
+      }
     }
   }
 
@@ -14,11 +30,7 @@
   }
 
   &__text {
-    @apply text-xs font-semibold text-blue z-10;
-
-    &_checked {
-      @apply font-normal text-white;
-    }
+    @apply text-xs font-semibold text-blue z-10 select-none;
   }
 
   &__div::before {

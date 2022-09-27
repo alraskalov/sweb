@@ -7,7 +7,7 @@ const initialState = {
   selectPanel: [],
   osPanel: [],
   datacenters: [],
-  categories: [],
+  categories: [{ id: "0", name: "all", description: "Все", prior: "0" }],
   error: null,
 };
 
@@ -27,7 +27,7 @@ const vpsReducer = (state = initialState, action) => {
         selectPanel: [...action.payload.selectPanel],
         osPanel: [...action.payload.osPanel],
         datacenters: [...action.payload.datacenters],
-        categories: [...action.payload.categories],
+        categories: [...state.categories, ...action.payload.modifCategories],
         error: null,
       };
     case vpsTypes.FETCH_VPS_FAILURE:
@@ -35,7 +35,7 @@ const vpsReducer = (state = initialState, action) => {
         ...state,
         pending: false,
         vps: [],
-        error: action.payload.error,
+        error: action.payload.error || "Произошла ошибка",
       };
     default:
       return {

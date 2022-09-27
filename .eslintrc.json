@@ -33,6 +33,7 @@
       { "namedComponents": "arrow-function" }
     ],
     "default-param-last": 0,
-    "react-hooks/exhaustive-deps": "warn"
+    "react-hooks/exhaustive-deps": "warn",
+    "camelcase": "off"
   }
 }

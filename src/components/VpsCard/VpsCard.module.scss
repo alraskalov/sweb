@@ -1,8 +1,16 @@
 .card {
-  @apply bg-[#E0F6FC] w-full box-border rounded justify-start;
+  @apply bg-[#E0F6FC] w-full box-border rounded justify-start h-[100%];
+
+  &_hdd {
+    @apply bg-[#C4EBF8];
+  }
+
+  &_turbo {
+    @apply bg-[#ECFDF7];
+  }
 
   &__container {
-    @apply flex flex-col px-5 pt-5 pb-6 w-full;
+    @apply flex flex-col px-5 pt-5 pb-6 w-full h-[100%];
   }
 
   &__header {
@@ -22,11 +30,11 @@
   }
 
   &__form {
-    @apply flex flex-col gap-[23px] mt-5 w-full;
+    @apply flex flex-col gap-[23px] mt-5 w-full h-[100%];
   }
 
   &__bonus {
-    @apply flex items-center gap-4;
+    @apply flex items-center gap-4 my-auto;
   }
 
   &__button {
@@ -43,7 +51,7 @@
 
 .specifications {
   &__item {
-    @apply text-[#62686C] text-xs font-normal gap-[9px] flex;
+    @apply text-[#62686C] text-xs font-normal gap-[9px] flex items-center;
   }
 
   &__text {
