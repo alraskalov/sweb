@@ -2,7 +2,7 @@
   @apply max-w-7xl mx-auto font-normal text-xs text-black;
 
   &__container {
-    @apply flex box-border p-5 w-full justify-between;
+    @apply flex box-border py-5 w-full justify-between mobile:px-5 flex-wrap gap-5;
   }
 
   &__link {

@@ -55,5 +55,5 @@ body {
 }
 
 #root {
-  @apply font-proxima font-normal min-h-[100vh] h-[100%] max-w-7xl mx-auto;
+  @apply font-proxima font-normal min-h-[100vh] h-[100%] max-w-7xl xl:mx-auto md:mx-5 sm:mx-0;
 }

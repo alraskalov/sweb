@@ -7,7 +7,11 @@ module.exports = {
         proxima: "'Proxima Nova', serif",
       },
       gridTemplateColumns: {
-        list: "repeat(4, 1fr);"
+        sm: "repeat(auto-fit, 232px)",
+        mobile: "repeat(auto-fit, 343px)"
+      },
+      screens: {
+        mobile: "320px",
       },
       colors: {
         crayola: "#F7FAFB",
@@ -17,7 +21,7 @@ module.exports = {
         "gentian-blue": "#0A3145",
         "silver-grey": "#939DA2",
         "dark-blue": "#339AC8",
-        "grideperlevy": "#E3E9EC",
+        grideperlevy: "#E3E9EC",
         "bright-red": "#D0021B",
       },
       fontSize: {
@@ -32,9 +36,12 @@ module.exports = {
       boxShadow: {
         lg: "0px 2px 10px #AFBABF",
         md: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-        "button-def": "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)",
-        "button-hov": "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.16)",
-        "button-foc": "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.26)",
+        "button-def":
+          "0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24)",
+        "button-hov":
+          "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.16)",
+        "button-foc":
+          "0px 0px 8px rgba(0, 0, 0, 0.0001), 0px 5px 5px rgba(0, 0, 0, 0.26)",
       },
     },
   },

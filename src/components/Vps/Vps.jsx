@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchVpsRequest } from "../../redux/actions/vpsActions";
+import styles from "./Vps.module.scss";
 import Select from "../UI/Select/Select";
 import VpsCard from "../VpsCard/VpsCard";
 import VpsList from "../VpsList/VpsList";
@@ -27,30 +28,30 @@ const Vps = () => {
   }, [selectedCategory, vpsPlans]);
 
   return (
-    <section className="flex h-[100%] min-h-[100vh] flex-col">
-      <div className="flex flex-col border-b-2 border-solid border-crayola text-dark-greenish-blue">
-        <div className="mb-[15px] flex flex-col gap-[11px]">
+    <section className={styles.vps}>
+      <div className={`${styles.vps__header} header`}>
+        <div className={`${styles.header__container}`}>
           <div>
-            <p className="text-sm font-light uppercase">Аккаунт</p>
+            <p className={styles.header__title}>Аккаунт</p>
           </div>
           <div>
-            <h1 className="text-xl font-bold uppercase">Заказать VPS</h1>
+            <h1 className={styles.header__subtitle}>Заказать VPS</h1>
           </div>
         </div>
       </div>
       {pending && !filteredVps.length && (
-        <div className="m-auto flex h-[100%] w-[100%] justify-center">
+        <div className={styles.error}>
           <p>Идет загрузка...</p>
         </div>
       )}
       {error && !filteredVps.length && (
-        <div className="m-auto flex h-[100%] w-[100%] justify-center">
+        <div className={styles.error}>
           <p>Произошла ошибка при загрузке</p>
         </div>
       )}
       {!pending && !error && (
         <>
-          <div className="mt-4 mb-5 box-border flex max-w-[232px] flex-col gap-3">
+          <div className={styles.vps__category}>
             <div>
               <div>
                 <p>Категория</p>
@@ -63,7 +64,7 @@ const Vps = () => {
             />
           </div>
           {!filteredVps.length && (
-            <div className="m-auto flex h-[100%] w-[100%] justify-center">
+            <div className={styles.error}>
               <p>Ничего не найдено</p>
             </div>
           )}
