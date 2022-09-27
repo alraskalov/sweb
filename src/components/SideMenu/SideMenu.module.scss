@@ -40,11 +40,6 @@
   }
 }
 
-// .container {
-//   background-color: rgb(6, 36, 54, 0.5);
-//   @apply h-full transition-all delay-75 w-full;
-// }
-
 .container {
   background-color: rgb(6, 36, 54, 0.5);
   @apply h-full flex fixed top-0 left-0 w-0 opacity-0 invisible z-50 transition-all delay-75 md:relative md:h-auto;
