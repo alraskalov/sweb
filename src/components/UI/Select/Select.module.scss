@@ -55,7 +55,7 @@
     }
 
     &_disabled:not(&_selected) {
-      @apply  border-grideperlevy;
+      @apply border-grideperlevy;
       background-color: #F9FBFC;
       color: #AFBABF;
 
@@ -66,7 +66,7 @@
   }
 
   &__arrow {
-    @apply h-2;
+    @apply h-2 transition-all;
     width: 14px
   }
 
