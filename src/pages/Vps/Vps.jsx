@@ -68,7 +68,7 @@ const Vps = () => {
               <p>Ничего не найдено</p>
             </div>
           )}
-          {filteredVps.length && (
+          {filteredVps.length > 0 && (
             <VpsList>
               {filteredVps.map((vps) => (
                 <VpsCard key={vps.id} vps={vps} />

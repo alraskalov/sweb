@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
-import logo from "../../assets/logo.svg";
-import { menuItem } from "../../utils/data";
+import PropTypes from "prop-types";
+import { useEffect } from "react";
 import styles from "./Header.module.scss";
 
-const Header = () => {
-  const [menuIsActive, setMenuIsActive] = useState(false);
-
-  const onClick = () => {
-    return menuIsActive ? setMenuIsActive(false) : setMenuIsActive(true);
-  };
-
+const Header = ({ menuIsActive, onClickMenu }) => {
   useEffect(() => {
     if (!menuIsActive) return undefined;
     const closeByEscape = (e) => {
       if (e.key === "Escape") {
-        setMenuIsActive(!menuIsActive);
+        onClickMenu(!menuIsActive);
       }
     };
 
@@ -22,65 +15,16 @@ const Header = () => {
     return () => document.removeEventListener("keydown", closeByEscape);
   }, [menuIsActive]);
 
-  useEffect(() => {
-    document.body.style.overflowY = menuIsActive ? "hidden" : "";
-  }, [menuIsActive]);
+  const handleClickMenu = () => onClickMenu(!menuIsActive);
 
   return (
     <header className={styles.header}>
-      <nav className={`${styles.header__nav} nav`}>
-        <div
-          className={`${styles.container} ${
-            menuIsActive ? styles.container_active : ""
-          }`}
-        >
-          <div className={styles.menu}>
-            <div className={styles.menu__logo}>
-              <div>
-                <img src={logo} alt="Логотип SpaceWeb" />
-              </div>
-              <div className={styles.menu__btn}>
-                <button type="button" className="h-4" onClick={onClick}>
-                  <svg
-                    width="20"
-                    height="16"
-                    viewBox="0 0 20 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect width="20" height="2" rx="1" fill="#fff" />
-                    <rect y="7" width="20" height="2" rx="1" fill="#fff" />
-                    <rect y="14" width="20" height="2" rx="1" fill="#fff" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <ul className={styles.menu__list}>
-              {menuItem.map((el) => (
-                <li
-                  key={el.id}
-                  className={`${styles.menu__item} ${
-                    el.id === "vps" ? styles.menu__item_current : ""
-                  } item`}
-                >
-                  <div className={styles.item__container}>
-                    <div className={styles.item__icon}>
-                      <img src={el.img} alt={el.text} />
-                    </div>
-                    <div>
-                      <p className={styles.item__text}>{el.text}</p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+      <div className={`${styles.header__nav} nav`}>
         <div className={styles.nav__container}>
           <div className={styles.nav__wrapper}>
             <div className={styles["nav__menu-btn"]}>
               {!menuIsActive && (
-                <button type="button" className="h-4" onClick={onClick}>
+                <button type="button" className="h-4" onClick={handleClickMenu}>
                   <svg
                     width="20"
                     height="16"
@@ -130,9 +74,14 @@ const Header = () => {
             </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  menuIsActive: PropTypes.bool.isRequired,
+  onClickMenu: PropTypes.func.isRequired,
 };
 
 export default Header;
