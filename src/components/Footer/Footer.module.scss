@@ -1,8 +1,8 @@
 .footer {
-  @apply max-w-7xl mx-auto font-normal text-xs text-black;
+  @apply mx-auto max-w-7xl text-xs font-normal text-black;
 
   &__container {
-    @apply flex box-border py-5 w-full justify-between mobile:px-5 flex-wrap gap-5;
+    @apply box-border flex w-full flex-wrap justify-between gap-5 py-5 mobile:px-5;
   }
 
   &__link {
@@ -16,6 +16,6 @@
 
 .market {
   &__links {
-    @apply flex gap-[10px];
+    @apply gap-[10px] flex;
   }
 }

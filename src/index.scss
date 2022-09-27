@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-
   /* Bold */
   @font-face {
     font-family: "Proxima Nova";
@@ -55,5 +54,5 @@ body {
 }
 
 #root {
-  @apply font-proxima font-normal min-h-[100vh] h-[100%] max-w-7xl xl:mx-auto md:mx-5 sm:mx-0;
+  @apply h-[100%] min-h-[100vh] max-w-7xl font-proxima font-normal sm:mx-0 md:mx-5 xl:mx-auto;
 }

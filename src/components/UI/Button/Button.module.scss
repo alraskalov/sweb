@@ -1,5 +1,5 @@
 .button {
-  @apply uppercase font-extrabold text-base text-white tracking-[0.6px] rounded-sm bg-blue shadow-button-def h-9 w-full transition flex items-center justify-center;
+  @apply tracking-[0.6px]  flex h-9 w-full items-center justify-center rounded-sm bg-blue text-base font-extrabold uppercase text-white shadow-button-def transition;
 
   &:hover {
     @apply bg-[#37ACE0] shadow-button-hov;

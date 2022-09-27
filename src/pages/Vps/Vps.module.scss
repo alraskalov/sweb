@@ -1,18 +1,18 @@
 .vps {
-  @apply flex h-[100%] min-h-[100vh] w-full flex-col;
+  @apply h-[100%] min-h-[100vh] flex w-full flex-col;
 
   &__header {
     @apply flex flex-col border-b-2 border-solid border-crayola text-dark-greenish-blue;
   }
 
   &__category {
-    @apply mt-4 mb-5 box-border flex lg:max-w-[232px] flex-col gap-3 max-w-none;
+    @apply lg:max-w-[232px] mt-4 mb-5 box-border flex max-w-none flex-col gap-3 ;
   }
 }
 
 .header {
   &__container {
-    @apply mb-[15px] flex flex-col gap-[11px];
+    @apply gap-[11px] mb-[15px] flex flex-col;
   }
 
   &__title {
@@ -25,5 +25,5 @@
 }
 
 .error {
-  @apply m-auto flex h-[100%] w-[100%] justify-center;
+  @apply h-[100%] w-[100%] m-auto flex justify-center;
 }
